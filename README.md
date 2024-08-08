@@ -1,6 +1,6 @@
 # Playwright
 
-End-to-end tests validate an entire app from start to finish, like a real user would experience. These tests simulate user flows across the whole integrated system - frontend, backend, database. Unlike unit how tests focus on small pieces, end-to-end tests exercise the entire app together. This catches issues that only happen when all parts are combined.
+End-to-end tests validate an entire app from start to finish, like a real user would experience. These tests simulate user flows across the whole integrated system - frontend, backend, database. Unlike how unit tests focus on small pieces, end-to-end tests exercise the entire app together. This catches issues that only happen when all parts are combined.
 
 In this workshop, we'll learn end-to-end testing with Playwright. Playwright makes it easy to automate and test real browser interactions with the UI and functionality of web apps. We'll use Playwright to write scripts that simulate user flows. This will test our app fully from end-to-end.
 
