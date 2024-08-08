@@ -1,8 +1,16 @@
-import {test, expect} from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test("practice test should pass", async ({page}) => {
-    await page.goto("http://localhost:5432")
-    // get the text box
-    await page.getByRole('textbox', { name: 'New Todo' }).click()
-    await page.getByRole('textbox', { name: 'New Todo' }).fill("Wash the other car")
-})
+const port = process.env.PORT;
+
+test("practice test should pass", async ({ page }) => {
+  await page.goto(`http://localhost:3000`);
+  // get the text box
+  await page.getByRole("textbox", { name: "New Todo" }).click();
+  await page
+    .getByRole("textbox", { name: "New Todo" })
+    .fill("Wash the other car");
+  // assertion that the input's value is the todo text that you added
+  await expect(page.getByRole("textbox", { name: "New Todo" })).toHaveValue(
+    "Wash the other car"
+  );
+});
