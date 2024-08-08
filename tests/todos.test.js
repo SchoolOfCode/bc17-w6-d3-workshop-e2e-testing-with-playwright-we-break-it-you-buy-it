@@ -1,7 +1,5 @@
 import { test, expect } from "@playwright/test";
 
-const port = process.env.PORT;
-
 test("practice test should pass", async ({ page }) => {
   await page.goto(`http://localhost:3000`);
   // get the text box
@@ -13,4 +11,12 @@ test("practice test should pass", async ({ page }) => {
   await expect(page.getByRole("textbox", { name: "New Todo" })).toHaveValue(
     "Wash the other car"
   );
+});
+
+test("End to end user flow test", async ({ page }) => {
+  await page.goto(`http://localhost:3000`);
+  //   See the todo list app heading
+  await expect(
+    page.getByRole("heading", { name: "Todo List App" })
+  ).toBeVisible();
 });
